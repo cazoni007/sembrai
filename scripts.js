@@ -50,14 +50,24 @@ const region = document.getElementsByClassName('form__region');
 const chartContainer = document.querySelector('.chart-container');
 const info = document.querySelector('.info')
 const ButtomForm = document.querySelector('.form__buttom');
+const form = document.querySelector('.form-container__form');
 
+// const setData = (event) => {
+//     event.preventDefault();
+//     chartContainer.classList.remove('invisible');
+//     info.classList.remove('invisible');
+// }
+// ButtomForm.addEventListener('click', setData);
 const setData = (event) => {
     event.preventDefault();
-    chartContainer.classList.remove('invisible');
-    info.classList.remove('invisible');
+    if (zona[0].value === '' || region[0].value === '') {
+        alert('Selecciona tu ubicacion');
+    }else {
+        chartContainer.classList.remove('invisible');
+        info.classList.remove('invisible');
+    }
 }
-ButtomForm.addEventListener('click', setData);
-
+form.addEventListener('submit', setData);
 
 /**
 * @license
