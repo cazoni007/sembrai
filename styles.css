@@ -67,6 +67,10 @@ body {
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
+.form__producto {
+    padding: 0.4rem 1rem;
+    font-size: 1.6rem;
+}
 .form__fecha {
     color: #909090;
 }
