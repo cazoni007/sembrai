@@ -1,0 +1,16 @@
+.form__titulo {
+    font-size: 3rem;
+}
+.form__texto {
+    font-size: 1.875rem;
+}
+#map {
+    height: 500px;
+}
+main {
+    margin: 0 auto;
+    max-width: 760px;
+}
+body {
+    font-size: 1.8rem;
+}

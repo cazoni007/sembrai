@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aplicación para Granjeros</title>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Roboto&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="./desktop.css" media="screen and (min-width: 800px)">
+</head>
+<body>
+    <header class="header">
+        <div class="header__title-container">
+            <span><img class="logo" src="./utilities/Vector.svg" alt=""></span>
+            <h1 class="header__titulo1">SEMBRA</h1>
+            <h1 class="header__titulo2">i</h1>
+        </div>
+        <span><img class="hamburger" src="./utilities/hamburger.svg" alt=""></span>
+    </header>
+    <main>
+        <div class="form-container">
+            <h2 class="form__titulo">Ingrese los datos de siembra</h2>
+            <p class="form__texto">Seleccione su ubicacion exacta en el mapa</p>
+            <div id="map">
+            </div>
+            <form>
+                <label for="zona">Zona (Latitud y Longitud):</label>
+                <input class="form__zona" type="text" id="zona" name="zona" placeholder="Ej: -17.7833, -63.1821">
+                
+                <label for="region">Región:</label>
+                <input class="form__region" type="text" id="region" name="region" placeholder="Ej: Santa Cruz">
+                
+                <label for="producto">Producto:</label>
+                <input type="text" id="producto" name="producto" placeholder="Ej: Maíz">
+                
+                <label for="cantidad">Cantidad de producto a sembrar:</label>
+                <input type="number" id="cantidad" name="cantidad" placeholder="Ej: 100">
+                
+                <label for="fecha">Fecha:</label>
+                <label for="" class="form__fecha"></label>
+                
+                <button class="form__buttom" type="submit">Predecir</button>
+            </form>
+        </div>
+        <div class="chart-container invisible">
+            <canvas id="probabilityChart"></canvas>
+        </div>
+        <div class="info invisible">
+            <label for="temperature">Temperatura:</label>
+            <span id="temperature">-</span>
+            <br>
+            <label for="recommendation">Recomendación:</label>
+            <span id="recommendation">-</span>
+        </div>
+    </main>
+    <script>(g=>{var h,a,k,p="The Google Maps JavaScript API",c="google",l="importLibrary",q="__ib__",m=document,b=window;b=b[c]||(b[c]={});var d=b.maps||(b.maps={}),r=new Set,e=new URLSearchParams,u=()=>h||(h=new Promise(async(f,n)=>{await (a=m.createElement("script"));e.set("libraries",[...r]+"");for(k in g)e.set(k.replace(/[A-Z]/g,t=>"_"+t[0].toLowerCase()),g[k]);e.set("callback",c+".maps."+q);a.src=`https://maps.${
+        c}apis.com/maps/api/js?`+e;d[q]=f;a.onerror=()=>h=n(Error(p+" could not load."));a.nonce=m.querySelector("script[nonce]")?.nonce||"";m.head.append(a)}));d[l]?console.warn(p+" only loads once. Ignoring:",g):d[l]=(f,...n)=>r.add(f)&&u().then(()=>d[l](f,...n))})
+            ({key: "AIzaSyCVt5hAGm7ibbLBp6Xz-vti0OA1ZsMgNjo", v: "weekly"});
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="./scripts.js"></script>
+</body>
+</html>
