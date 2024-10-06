@@ -28,9 +28,15 @@ const probabilityChart = new Chart(ctx, {
                 callbacks: {
                     label: function(context) {
                         const value = context.raw;
+                        const temperature = value > 50 
+                            ? (Math.random() * (30 - 25) + 33).toFixed(1) 
+                            : (Math.random() * (35 - 33) + 25).toFixed(1);
                         const recommendation = value > 50 ? 'Sembrar' : 'No sembrar';
-                        document.getElementById('temperature').textContent = `${value}°C`;
+                        const day = context.label.split(' ');
+                        const precipitation = (day[1] == 4 || day[1] == 16) ? 'Lluvia' : 'No lluvia';
+                        document.getElementById('temperature').textContent = `${temperature}°C`;
                         document.getElementById('recommendation').textContent = recommendation;
+                        document.getElementById('presipitacion').textContent = precipitation;
                         return `Probabilidad: ${value}%`;
                     }
                 }
